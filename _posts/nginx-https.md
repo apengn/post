@@ -96,3 +96,31 @@ ssl_certificate_key /usr/local/Tengine/sslcrt/domain.Key;
       }
 }
 ```
+
+
+
+
+```
+
+https://www.ixsystems.com/community/threads/how-to-owncloud-using-nginx-php-fpm-and-mysql.17786/page-78#post-395092
+过添加
+
+client_body_in_file_only clean 找到解决方案; 
+client_body_buffer_size 32K; #set 
+
+max upload size 
+client_max_body_size 4000M; 
+
+
+       add_header X-Xss-Protection“1; mode = block”总是;
+	   add_header X-Content-Type-Options“nosniff”总是;
+	   add_header Strict-Transport-Security“max-age = 2592000; includeSubdomains”总是;
+	   add_header X-Frame-Options“SAMEORIGIN”总是;
+	   proxy_hide_header X-Powered-By;
+	   add_header'Referrer-Policy''no-referrer';
+	   add_header Content-Security-Policy“frame-ancestors mydomain.eu;”;
+```
+
+
+dragonfly docker proxy   branch fix-md2
+

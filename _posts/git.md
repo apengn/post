@@ -648,3 +648,56 @@ stash可以运行多次，会保存多个状态，可以运行 git stash list �
 最后需要注意一点：stash 复原的时候默认不复原 staged 文件，也就是说如果你运行过 add 命令，使用 git status 查看的话文件应当处于 staged 状态，但是如果你 stash 并复原再看，那个文件的状态又变回 unstaged 了。解决办法就是运行 git stash apply 命令时加上 --index 参数：git stash apply --index，这样就可以完全恢复到 stash 之前的状态。``
 
 ```
+
+
+
+修改branch 的名字
+```
+git branch -M oldbranch newbranch
+```
+
+
+git stash 可用来暂存当前正在进行的工作， 比如想pull 最新代码， 又不想加新commit， 或者另外一种情况，为了fix 一个紧急的bug,  先stash, 使返回到自己上一个commit, 改完bug之后再stash pop, 继续原来的工作。
+基础命令：
+$git stash
+$do some work
+$git stash pop
+
+
+进阶：
+
+git stash save "work in progress for foo feature"
+
+当你多次使用’git stash’命令后，你的栈里将充满了未提交的代码，这时候你会对将哪个版本应用回来有些困惑，
+
+’git stash list’ 命令可以将当前的Git栈信息打印出来，你只需要将找到对应的版本号，例如使用’git stash apply stash@{1}’就可以将你指定版本号为stash@{1}的工作取出来，当你将所有的栈都应用回来的时候，可以使用’git stash clear’来将栈清空。
+
+
+
+git stash          # save uncommitted changes
+# pull, edit, etc.
+git stash list     # list stashed changes in this git
+git show stash@{0} # see the last stash 
+git stash pop      # apply last stash and remove it from the list
+
+git stash --help   # for more info
+
+git checkout bbb
+git rebase master   //   把master的代码弄到bbb上(前提条件是文件不冲突，tree进行改变)
+
+git checkout --theirs xxx    把xxx  分支的内容放到bbb上
+
+git checkout --ours xxx  类似
+
+
+git删除某个commit
+```
+1.git log 获取commit信息 
+2.git rebase -i (commit-id) 
+commit-id 为要删除的commit的下一个commit号 
+3.编辑文件，将要删除的commit之前的单词改为drop 
+4.保存文件退出大功告成 
+5.git log查看
+
+git push origin master –force
+```
