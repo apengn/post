@@ -690,14 +690,19 @@ git checkout --theirs xxx    把xxx  分支的内容放到bbb上
 git checkout --ours xxx  类似
 
 
-git删除某个commit
-
 ```
-1.git log 获取commit信息 
-2.git rebase -i (commit-id) 
+### git删除某个commit
+```
+1.git log 获取commit信息  
+
+2.git rebase -i (commit-id)
+ 
 commit-id 为要删除的commit的下一个commit号 
+
 3.编辑文件，将要删除的commit之前的单词改为drop 
+
 4.保存文件退出大功告成 
+
 5.git log查看
 
 git push origin master –force
