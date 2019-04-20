@@ -691,6 +691,7 @@ git checkout --ours xxx  类似
 
 
 git删除某个commit
+
 ```
 1.git log 获取commit信息 
 2.git rebase -i (commit-id) 
