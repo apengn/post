@@ -4,13 +4,13 @@ date: 2019-04-12 23:44:42
 tags:
 ---
 
-install ansible
-
+#install ansible
+```
 python  --version
 Python 2.7.10
 sudo easy_install pip
 sudo pip install ansible
-
+```
 
 dome :
 https://blog.csdn.net/pushiqiang/article/details/78126063
