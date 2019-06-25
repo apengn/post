@@ -124,3 +124,23 @@ client_max_body_size 4000M;
 
 dragonfly docker proxy   branch fix-md2
 
+```
+server {
+    listen       443 ssl;
+    server_name localhost;
+
+    # 上面生成的自签名证书
+    ssl_certificate /tmp/ssl/server.crt;
+    ssl_certificate_key /tmp/ssl/server.key;
+
+    ssl_session_timeout 5m;
+
+    location / {
+        proxy_set_header  X-Real-IP  $remote_addr;
+        proxy_set_header  Host $host;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        # 后端服务
+        proxy_pass http://localhost:8080;
+    }
+}
+```

@@ -12,7 +12,7 @@ helm  install chats 与repo 有关
 helm 获取删除chats release 只与config 有关
 
 helm repo add  可以 重复，第二次添加类似update
-
+helm create wp
 helm package wp --debug
 
 ### 启动helm repo  serve
@@ -24,11 +24,11 @@ nohup ./helm serve --address 0.0.0.0:8879 &
 ```
 sudo ./install.sh   --with-clair --with-chartmuseum
 ```
-### 添加harbor repo
+### 添加harbor repo  需要密码
 ```
  helm repo add --username=admin --password=Passw0rd myrepo https://xx.xx.xx.xx/chartrepo
 ```
-### 添加特定仓库
+### 添加私有特定仓库  公有的无需密码
 ```
    helm repo add --username=admin --password=Passw0rd myrepo https://xx.xx.xx.xx/chartrepo/myproject
 ```

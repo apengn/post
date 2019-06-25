@@ -706,4 +706,23 @@ commit-id 为要删除的commit的下一个commit号
 5.git log查看
 
 git push origin master –force
+```i
+使用--amend 修改 author 
 ```
+ git commit --amend --author=‘xxx <xxxx@xxx.xxx>
+```
+
+
+https://blog.csdn.net/mocoe/article/details/84344411
+
+https://www.jianshu.com/p/5b3166c855b2
+
+
+// 把另一个分支structure2的代码merge  到newbr 上，不包括commit
+git checkout master
+git checout -b newbr 
+git merge —squash —no-commit structure2
+git add vendor
+git commit -m "add vendor"
+git add .
+git commit -a -m "commit message"  
