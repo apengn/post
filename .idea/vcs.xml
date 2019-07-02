@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.deploy_git" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/source" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sss/post" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/aero-dual" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/concise" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/miho" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/themes/next" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/themes/pure" vcs="Git" />
   </component>
 </project>
